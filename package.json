@@ -1,0 +1,7 @@
+{
+    "scripts": {
+        "build": "npm run --prefix ./backend build && npm run --prefix ./frontend build",
+        "start": "cd ./release && node server.js",
+        "all": "npm run --prefix ./backend build && npm run --prefix ./frontend build && cd ./release && node server.js"
+    }
+}

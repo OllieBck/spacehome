@@ -1,9 +1,15 @@
 import { Message } from "../../modules/message";
+import { Workspace } from "./workspace"
 
-export async function route (message: string) {
-    let msg: Message = JSON.parse(message);
+let initWorkspace: Workspace;
+
+export async function routeMessage (msg: Message) {
     switch (msg.route) {
-        case 
+        case 'init':
+            initWorkspace = new Workspace(msg.data);
+            let randomRoom = initWorkspace.getRoom();
+            let cmd: Message = { route: 'control', data: true, room: randomRoom };
+            let cmdString = JSON.stringify(cmd);
+            return cmdString;
     }
-
 }
