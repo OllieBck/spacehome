@@ -1,4 +1,6 @@
-export class Workspace {
+import { roomNames } from "../../modules/rooms";
+
+class Workspace {
     numberRooms: number;
     randomRoom: number;
 
@@ -14,4 +16,10 @@ export class Workspace {
         let randRoomNumber = this.getRandomInt(this.numberRooms);
         return randRoomNumber;
     }
+}
+
+let initWorkspace = new Workspace(roomNames.length)
+
+export {
+    initWorkspace
 }
